@@ -1,0 +1,139 @@
+
+ body {
+     font-family: 'Tahoma', sans-serif;
+     background-color: #f4f7f6;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     height: 100vh;
+     margin: 0;
+ }
+
+ .card {
+     position: relative;
+     background-color: #ffffff;
+     width: 400px;
+     padding: 35px 25px;
+     border-radius: 12px;
+     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+ }
+
+ .ribbon {
+     position: absolute;
+     top: 25px;
+     right: -37px;
+     background: linear-gradient(135deg, #00b09b, #96c93d);
+     color: white;
+     text-align: center;
+     font-size: 14px;
+     font-weight: bold;
+     padding: 6px 50px;
+     transform: rotate(45deg);
+     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+     z-index: 10;
+     border-top-left-radius: 8px;
+     border-top-right-radius: 8px;
+    }
+    .ribbon::before{
+        content: "";
+        position: absolute;
+        bottom: -6px;
+        right: 0;
+        width: 0;
+        height: 0;
+        border-width: 0 6px 6px 0;
+        border-style: solid;
+        border-color: transparent #00766b transparent transparent ;
+    } 
+    .ribbon::after{
+          content: "";
+          position: absolute;
+          bottom: -6px;
+          left: 0;
+          width: 0;
+          height: 0;
+          border-width: 0 0  6px 6px;
+          border-style: solid;
+          border-color: transparent transparent transparent #00766b;
+    }
+    
+ .card-title {
+     font-size: 25px;
+     font-weight: bold;
+     color: rgb(130, 209, 175);
+     margin-bottom: 25px;
+     margin-top: 5px;
+ }
+
+ .checkbox-group {
+     display: flex;
+     flex-direction: column;
+     gap: 12px;
+ }
+
+ .custom-checkbox {
+     position: relative;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     cursor: pointer;
+     font-size: 15px;
+     color: #333;
+     padding: 12px 15px;
+     background-color: #f9f9f9;
+     border-radius: 8px;
+     border: 1px solid #eee;
+     transition: all 0.3s ease;
+ }
+
+ .custom-checkbox input {
+     position: absolute;
+     opacity: 0;
+     cursor: pointer;
+     height: 0;
+     width: 0;
+ }
+
+ /* حاوية المربع البديل وضبط مكانه بعيداً عن الحافة */
+ .checkmark {
+     position: relative;
+     height: 22px;
+     width: 22px;
+     background-color: #ddd;
+     border-radius: 6px;
+     transition: all 0.3s ease;
+     flex-shrink: 0;
+     margin-right: 10px;
+ }
+
+ .custom-checkbox:hover input~.checkmark {
+     background-color: #ccc;
+ }
+
+ /* إظهار خط يتوسط النص وتغيير لونه عند التحديد */
+ .custom-checkbox input:checked~.task-text {
+     text-decoration: line-through;
+     color: #00b09b;
+ }
+
+ .custom-checkbox input:checked~.checkmark {
+     background-color: #00b09b;
+     box-shadow: 0 4px 10px rgba(0, 176, 155, 0.3);
+ }
+
+ .custom-checkbox input:checked~.checkmark:after {
+     display: block;
+ }
+
+ .checkmark:after {
+     content: "";
+     position: absolute;
+     display: none;
+     left: 8px;
+     top: 3px;
+     width: 5px;
+     height: 10px;
+     border: solid white;
+     border-width: 0 2px 2px 0;
+     transform: rotate(45deg);
+ }
